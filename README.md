@@ -214,8 +214,8 @@ Sistem AI prediksi kemacetan lalu lintas Bengkulu ini berhasil mengintegrasikan 
 Untuk pertanyaan atau kolaborasi lebih lanjut, silakan hubungi:
 
 - **Sidik Bagus Firmansyah**: sidikbagus46@gmail.com  
-- **Koreza Almukadima**: korezaalmukadima@gmail.com
-- **Muhammad Ryan Al-Habsy**: ryanhabsy@gmail.com
+- **Koreza Almukadima**: zonevista860@gmail.com
+- **Muhammad Ryan Al-Habsy**: mryanalhabsy@gmail.com
 
 ---
 
