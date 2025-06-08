@@ -74,7 +74,7 @@ Prediksi Kemacetan → Rekomendasi Rute → Visualisasi Peta + Analisis Teks
 
 ### 🔐 GUI
 ![GUI](GUI.png)
-### 🔍 HASIL dan ANALISIS
+### 🔍 Hasil dan Analisis
 ![Analisis](GUI_Hasil.png)
 ### 🗺️ Visualisasi Map dengan OpenStreetMap (OSM)
 ![Visualisasi](GUI_Map_Folium.png)
