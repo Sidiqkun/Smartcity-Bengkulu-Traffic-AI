@@ -108,7 +108,7 @@ smartcity_traffic_prediction_bengkulu.PY
 
 ---
 
-## 🚀 5. Kreativitas & Pengembangan
+## 🚀 5. Fitur & Pengembangan
 
 ### Fitur :
 
