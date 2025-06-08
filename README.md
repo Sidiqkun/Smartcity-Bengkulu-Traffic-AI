@@ -15,31 +15,6 @@ Aplikasi ini merupakan prototipe sistem prediksi kemacetan lalu lintas dan rekom
 
 ---
 
-## 🖥️ Tampilan Antarmuka
-
-### 🔐 GUI
-![GUI](GUI.png)
-### 🔍 HASIL dan ANALISIS
-![Analisis](GUI_Hasil.png)
-### 🗺️ Visualisasi Map dengan OpenStreetMap (OSM)
-![Visualisasi](GUI_Map_Folium.png)
-
----
-
-## 📚 Cara Menjalankan
-
-1. Install Dependencies (opsional)
-```bash
-pip install osmnx networkx geopy folium scikit-learn
-```
-2. Jalankan Aplikasi
-```bash
-smartcity_traffic_prediction_bengkulu.PY
-```
----
-
-# Pemahaman
-
 ## 🧠 1. Relevansi & Justifikasi Model AI
 
 Model AI yang digunakan adalah **Decision Tree (logika berbasis aturan)**. Alasan pemilihannya:
@@ -95,6 +70,29 @@ Input User → Proses AI (Decision Rules) → Cek POI Aktif + Faktor Cuaca + Wak
 Prediksi Kemacetan → Rekomendasi Rute → Visualisasi Peta + Analisis Teks
 
 ---
+## 🖥️ 4. Tampilan Antarmuka
+
+### 🔐 GUI
+![GUI](GUI.png)
+### 🔍 HASIL dan ANALISIS
+![Analisis](GUI_Hasil.png)
+### 🗺️ Visualisasi Map dengan OpenStreetMap (OSM)
+![Visualisasi](GUI_Map_Folium.png)
+
+---
+
+## 📚 5. Cara Menjalankan
+
+1. Install Dependencies (opsional)
+```bash
+pip install osmnx networkx geopy folium scikit-learn
+```
+2. Jalankan Aplikasi
+```bash
+smartcity_traffic_prediction_bengkulu.PY
+```
+
+---
 
 ## 🎯 4. Evaluasi Sistem & Metrik
 
@@ -126,18 +124,6 @@ Prediksi Kemacetan → Rekomendasi Rute → Visualisasi Peta + Analisis Teks
 * Sistem dapat dikembangkan dengan menambah atribut hari aktif pada POI agar prediksi lebih realistis (misal: sekolah/kantor tidak aktif saat weekend).
 * Integrasi data real-time (sensor lalu lintas, crowdsourcing).
 * Penggunaan model AI lain (misal: Neural Network) jika data historis tersedia.
-
----
-
-## 📂 Struktur Folder
-
-```
-smartcity-bengkulu-traffic-ai/
-├── index.py               # File utama aplikasi AI
-├── README.md              # Dokumentasi sistem
-├── requirements.txt       # Library Python
-└── /screenshots           # (opsional) tampilan sistem
-```
 
 ---
 
