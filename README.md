@@ -2,7 +2,7 @@
 
 ## 🏛️ Deskripsi Proyek
 
-Sistem ini merupakan prototipe **prediksi kemacetan lalu lintas** berbasis kecerdasan buatan untuk mendukung program **Smart City di Bengkulu**. Aplikasi ini dapat memprediksi potensi kemacetan berdasarkan **waktu, cuaca, hari (weekend/weekday)**, dan **lokasi titik keramaian** seperti sekolah, pasar, dan kantor. Sistem juga memberikan **rekomendasi rute alternatif** secara real-time dengan visualisasi menggunakan peta.
+Aplikasi ini merupakan prototipe sistem prediksi kemacetan lalu lintas dan rekomendasi rute berbasis kecerdasan buatan (AI) untuk kota Bengkulu. Sistem ini memanfaatkan data graf jalan dari OpenStreetMap, titik keramaian (POI), serta model AI Decision Tree untuk memprediksi tingkat kemacetan dan memberikan saran rute terbaik secara interaktif.
 
 ---
 
@@ -10,9 +10,7 @@ Sistem ini merupakan prototipe **prediksi kemacetan lalu lintas** berbasis kecer
 
 Model AI yang digunakan adalah **Decision Tree (logika berbasis aturan)**. Alasan pemilihannya:
 
-* Mudah diimplementasikan dan dimengerti
-* Cocok untuk **data diskrit dan bersifat if-else** seperti waktu, hari, dan kategori titik keramaian
-* Efisien untuk aplikasi simulasi ringan tanpa memerlukan training data besar
+Decision Tree dipilih karena mudah diimplementasikan, cepat dalam inferensi, dan dapat menangani data tabular sederhana seperti jam, cuaca, dan jumlah titik keramaian aktif. Model ini cocok untuk prototipe sistem prediksi kemacetan berbasis fitur-fitur yang tersedia tanpa memerlukan data historis dalam jumlah besar.
 
 Model tidak menggunakan machine learning berbasis training dataset besar, namun berbasis logika deterministik.
 
@@ -22,10 +20,9 @@ Model tidak menggunakan machine learning berbasis training dataset besar, namun 
 
 ### Jenis Data:
 
-* **Titik POI (Point of Interest):** Sekolah, pasar, kantor, mall
-* **Faktor waktu:** Jam (0-24)
-* **Hari:** Apakah weekend atau bukan
-* **Cuaca:** Cerah / Hujan
+* Titik keramaian (POI): Data manual, terdiri dari sekolah, mall, kantor, pasar, dan universitas, lengkap dengan jam aktif.
+* Graf jalan: OpenStreetMap (diambil otomatis dengan OSMnx).
+* Data cuaca dan waktu: Input manual dari user.
 
 ### Pengumpulan Data:
 
@@ -34,9 +31,10 @@ Model tidak menggunakan machine learning berbasis training dataset besar, namun 
 
 ### Praproses:
 
-* POI dianalisis berdasarkan jam aktif dan tipe lokasi
-* Jika weekend, sekolah dan kantor dianggap **tidak aktif**
-* Waktu dan cuaca dikombinasikan menjadi faktor prediksi kemacetan
+* POI memiliki atribut jam aktif dan dapat dikembangkan dengan atribut hari aktif.
+* Data training AI disimulasikan berdasarkan kombinasi jam, cuaca, dan jumlah POI aktif.
+* Data graf disimpan dalam cache (bengkulu_graph.pkl) untuk efisiensi.
+* Semua data diolah secara terstruktur sebelum digunakan untuk prediksi dan visualisasi.
 
 ---
 
@@ -44,7 +42,7 @@ Model tidak menggunakan machine learning berbasis training dataset besar, namun 
 
 ### Alur Sistem:
 
-1. **Pengguna memilih**: Lokasi awal & tujuan, jam, cuaca, hari
+1. User memilih lokasi awal, tujuan, kendaraan, jam, dan cuaca.
 2. Sistem menghitung **faktor kemacetan** berdasarkan:
 
    * Banyaknya titik padat aktif
@@ -57,12 +55,10 @@ Model tidak menggunakan machine learning berbasis training dataset besar, namun 
 4. **Visualisasi rute** ditampilkan dengan folium (peta interaktif)
 5. Sistem memberikan **analisis AI** dan **kesimpulan kemacetan**
 
-### Diagram (Opsional di README):
+### Diagram:
 
-```
 Input User → Proses AI (Decision Rules) → Cek POI Aktif + Faktor Cuaca + Waktu →
 Prediksi Kemacetan → Rekomendasi Rute → Visualisasi Peta + Analisis Teks
-```
 
 ---
 
@@ -70,39 +66,32 @@ Prediksi Kemacetan → Rekomendasi Rute → Visualisasi Peta + Analisis Teks
 
 ### Evaluasi dilakukan berdasarkan:
 
-* **Jumlah POI aktif** yang memengaruhi jalur
-* **Skor kemacetan** (rentang 0–10), dihitung dari kombinasi waktu, cuaca, dan titik padat
+* Sistem diuji dengan berbagai kombinasi input (jam, cuaca, jumlah POI aktif) untuk melihat perubahan prediksi kemacetan dan rekomendasi rute.
+* Hasil prediksi AI (Decision Tree) ditampilkan secara eksplisit di hasil analisis.
 * **Status rute rekomendasi** apakah benar menjauhi titik padat
 
 ### Metrik Evaluasi:
 
-* **Kelas Kemacetan**:
-
-  * 0–4: Lancar
-  * 5–7: Padat
-  * 8–10: Macet Berat
-* Validasi dilakukan secara simulasi manual berdasarkan input skenario (weekend/hari sibuk)
+* Untuk prototipe ini, evaluasi dilakukan secara kualitatif dengan membandingkan hasil prediksi dengan ekspektasi logis (misal: kemacetan tinggi saat rush hour dan banyak POI aktif).
 
 ---
 
 ## 🚀 5. Kreativitas & Pengembangan
 
-### Fitur Inovatif:
+### Fitur :
 
 * Simulasi cuaca & waktu yang mengubah status POI
-* **Pengecualian otomatis titik sekolah/kantor saat weekend**
-* Penambahan analisis AI berupa:
-
-  * Penjelasan penyebab kemacetan
-  * Skor kemacetan akhir
-  * Rekomendasi waktu alternatif
+* Visualisasi status POI dan rute pada peta interaktif.
+* Integrasi AI Decision Tree untuk prediksi kemacetan secara otomatis.
 
 ### Potensi Pengembangan:
 
 * Integrasi dengan data **cuaca API & sensor traffic**
 * Sinkronisasi dengan Google Maps / Leaflet real-time
 * Aplikasi mobile berbasis Flutter
-* Visualisasi heatmap area macet di kota Bengkulu
+* Sistem dapat dikembangkan dengan menambah atribut hari aktif pada POI agar prediksi lebih realistis (misal: sekolah/kantor tidak aktif saat weekend).
+* Integrasi data real-time (sensor lalu lintas, crowdsourcing).
+* Penggunaan model AI lain (misal: Neural Network) jika data historis tersedia.
 
 ---
 
@@ -121,7 +110,7 @@ smartcity-bengkulu-traffic-ai/
 ## 📚 Cara Menjalankan
 
 ```bash
-pip install folium tkinter
+pip install osmnx networkx geopy folium scikit-learn
 python index.py
 ```
 
@@ -129,4 +118,4 @@ python index.py
 
 ## 🌍 Link GitHub
 
-[https://github.com/namakamu/smartcity-bengkulu-traffic-ai](https://github.com/namakamu/smartcity-bengkulu-traffic-ai) *(ganti dengan link asli kelompokmu)*
+
