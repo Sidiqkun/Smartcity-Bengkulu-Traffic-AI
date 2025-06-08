@@ -6,6 +6,36 @@ Aplikasi ini merupakan prototipe sistem prediksi kemacetan lalu lintas dan rekom
 
 ---
 
+## 👥 Anggota Kelompok 8
+| Nama                     | GitHub                                      |
+|--------------------------|---------------------------------------------|
+| Muhammad Ryan Al-Habsy   | [Starcres](https://github.com/Starcres)     |
+| Sidik Bagus Firmansyah   | [Sidiqkun](https://github.com/Sidiqkun)     |
+| -     | [---](https://github.com/)       |
+
+---
+
+## 🖥️ Tampilan Antarmuka
+
+
+
+---
+
+## 📚 Cara Menjalankan
+
+1. Install Dependencies (opsional)
+```bash
+pip install osmnx networkx geopy folium scikit-learn
+```
+2. Jalankan Aplikasi
+```bash
+smartcity_traffic_prediction_bengkulu.PY
+```
+
+---
+
+# Pemahaman
+
 ## 🧠 1. Relevansi & Justifikasi Model AI
 
 Model AI yang digunakan adalah **Decision Tree (logika berbasis aturan)**. Alasan pemilihannya:
@@ -103,15 +133,6 @@ smartcity-bengkulu-traffic-ai/
 ├── README.md              # Dokumentasi sistem
 ├── requirements.txt       # Library Python
 └── /screenshots           # (opsional) tampilan sistem
-```
-
----
-
-## 📚 Cara Menjalankan
-
-```bash
-pip install osmnx networkx geopy folium scikit-learn
-python index.py
 ```
 
 ---
