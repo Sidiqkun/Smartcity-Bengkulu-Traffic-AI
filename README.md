@@ -36,8 +36,9 @@ pip install osmnx networkx geopy folium scikit-learn
 ```bash
 smartcity_traffic_prediction_bengkulu.PY
 ```
-
 ---
+
+## 🧠 Pemahaman Prototype Ada di https://github.com/Sidiqkun/Smartcity-Bengkulu-Traffic-AI/blob/main/Pemahaman_Prototype.md
 
 # Pemahaman
 
