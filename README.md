@@ -33,6 +33,14 @@ ELSE:
     kemacetan = "Rendah"
 ```
 
+### Mekanisme Routing:
+- Data jaringan jalan diperoleh dari OpenStreetMap menggunakan pustaka `osmnx`.
+- Sistem menggunakan algoritma shortest path dari `networkx` (Dijkstra) untuk menghitung:
+  - Rute tercepat
+  - Rute alternatif (menghindari/melalui titik padat)
+  - Rute rekomendasi (dipilih oleh AI berdasarkan kondisi)
+Semua perhitungan rute dilakukan secara lokal, tanpa mengandalkan API pihak ketiga.
+
 ---
 
 ## 📊 2. Data & Pengelolaan
