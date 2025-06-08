@@ -21,7 +21,7 @@ Aplikasi ini merupakan prototipe sistem prediksi kemacetan lalu lintas dan rekom
 ![GUI](GUI.png)
 ### 🔍 HASIL dan ANALISIS
 ![Analisis](GUI_Hasil.png)
-### 🗺️ Visualisasi Map dengan Folium
+### 🗺️ Visualisasi Map dengan OpenStreetMap (OSM)
 ![Visualisasi](GUI_Map_Folium.png)
 
 ---
