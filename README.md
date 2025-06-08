@@ -9,9 +9,9 @@ Aplikasi ini merupakan prototipe sistem prediksi kemacetan lalu lintas dan rekom
 ## 👥 Anggota Kelompok 8
 | Nama                     | GitHub                                      |
 |--------------------------|---------------------------------------------|
+| Koreza Almukadima        | [Zaa](https://github.com/Korezaalmukadima)  |
 | Muhammad Ryan Al-Habsy   | [Starcres](https://github.com/Starcres)     |
 | Sidik Bagus Firmansyah   | [Sidiqkun](https://github.com/Sidiqkun)     |
-| -     | [---](https://github.com/)       |
 
 ---
 
