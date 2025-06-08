@@ -118,4 +118,4 @@ python index.py
 
 ## 🌍 Link GitHub
 
-
+https://github.com/Sidiqkun/Smartcity-Bengkulu-Traffic-AI.git
