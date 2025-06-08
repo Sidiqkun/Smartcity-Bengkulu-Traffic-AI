@@ -38,8 +38,6 @@ smartcity_traffic_prediction_bengkulu.PY
 ```
 ---
 
-## 🧠 Pemahaman Prototype Ada di https://github.com/Sidiqkun/Smartcity-Bengkulu-Traffic-AI/blob/main/Pemahaman_Prototype.md
-
 # Pemahaman
 
 ## 🧠 1. Relevansi & Justifikasi Model AI
